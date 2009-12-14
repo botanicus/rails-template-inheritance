@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.version = "0.0.1"
   s.authors = ["Jakub Šťastný aka Botanicus"]
   s.homepage = "http://github.com/botanicus/rails-template-inheritance"
-  s.summary = "Template inheritance from Rango to Rails"
+  s.summary = "Template inheritance provided by Rango in Rails!"
   s.description = "" # TODO: long description
   s.cert_chain = nil
   s.email = ["knava.bestvinensis", "gmail.com"].join("@")

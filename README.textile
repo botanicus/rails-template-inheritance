@@ -1,0 +1,49 @@
+h1. About
+
+This Rails plugin provides *template inheritance* from "Rango":http://github.com/botanicus/rango for Rails, so you can just install it and enjoy advantages of template inheritance without any framework switching.
+
+See an "example application":http://github.com/botanicus/rango-in-rails
+
+h2. Template Inheritance
+
+"Template inheritance":http://wiki.github.com/botanicus/rango/template-inheritance is incredibly simple, powerful and flexible way how to handle layout/template. You usually needs more levels of layouting and you can do it very easily with template inheritance. You can have i. e. @app/views/admin/posts/show.html.haml@ with post-specific stuff, then @app/views/admin/base.html.haml@ with administration-specific layout and then @app/views/base.html.haml@ with the most generic layout.
+
+See also "explanation at DjangoProject.com":http://docs.djangoproject.com/en/dev/topics/templates/#template-inheritance
+
+h2. Rango
+
+"Rango":http://github.com/botanicus/rango is a light-weight web framework suitable for both smaller web services and bigger sites. It's builded on top of Rack and it has very flexible and modular architecture. So modular that we can even use it in Rails as a drop-in replacement for Rails rendering layer.
+
+- "Rango Wiki":http://wiki.github.com/botanicus/rango
+- "Rango Introduction from Ruby Manor 2009":http://www.slideshare.net/botanicus/rango
+
+h2. Template Adapters
+
+Thanks to "Tilt":http://github.com/rtomayko/tilt you can use Erubis or Haml, just by using the proper extension. Tilt itself supports much more, however Rango currently support just these two engines. Some engines won't be supported just because they don't support Ruby code in templates (Mustache and Liquid) etc.
+
+h1. Usage
+
+h2. As a Plugin
+
+@./script/plugin install git://github.com/botanicus/rails-template-inheritance.git@
+
+h2. As a Gem
+
+Add these lines into your @config/environment.rb@:
+
+<pre>
+config.gem "tilt"
+config.gem "rango", lib: nil
+config.gem "rails-template-inheritance", lib: nil
+</pre>
+
+Now run following tasks:
+
+<pre>
+rake gems:install
+rake gems:unpack
+</pre>
+
+h2. Via "bundler":http://github.com/wycats/bundler
+
+This is definitely the best solution since plugins can't handle dependencies and Rails 2 bundling tasks are just general pain in the ass.
