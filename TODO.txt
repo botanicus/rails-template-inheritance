@@ -1,0 +1,1 @@
+- ensure rendering in the proper scope, so helpers and API will work
