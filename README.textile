@@ -2,6 +2,8 @@ h1. About
 
 This Rails plugin provides *template inheritance* from "Rango":http://github.com/botanicus/rango for Rails, so you can just install it and enjoy advantages of template inheritance without any framework switching.
 
+Please note that this plugin works just with *Ruby 1.9.1 and higher*!
+
 See an "example application":http://github.com/botanicus/rango-in-rails
 
 h2. Template Inheritance
@@ -47,3 +49,10 @@ rake gems:unpack
 h2. Via "bundler":http://github.com/wycats/bundler
 
 This is definitely the best solution since plugins can't handle dependencies and Rails 2 bundling tasks are just general pain in the ass.
+
+Just put @gem "rails-template-inheritance"@ to your @Gemfile@ and run @gem bundle@ (you have to have bundler installed). Then you have to setup your @config/environment.rb@:
+
+<pre>
+require_relative "../vendor/gems/environment"
+Bundler.require_env(Rails.env)
+</pre>
